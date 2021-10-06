@@ -2,29 +2,12 @@
 <html>
 
 <head>
-    <title>Pass Phases</title>
-    <script>
-        var correct = 0, wrong = 0;
-        function processPhrase() {
-
-            secretphrase = document.getElementById("secretphrase").value
-            checkphrase = document.getElementById("checkphrase").value
-            if (secretphrase == checkphrase) {
-                correct = correct + 1;
-                document.getElementById("result").innerHTML = "Correct count " + correct;
-                alert("access allowed");
-            } else {
-
-                wrong = wrong + 1;
-                document.getElementById("result").innerHTML = "Wrong count " + wrong;
-                alert("access denied");
-            }
-        }
-    </script>
+    <title>Pass Pharses</title>
 </head>
 
 <body>
-    <h1>Pass phrase by Tirumala Swathi</h1>
+
+    <h2>Pass pharse by Tirumala Swathi</h2>
 
     <form>
         <label for="secretphrase">Enter the secret phrase </label>
@@ -35,7 +18,51 @@
         <input type="button" onclick="processPhrase()" value="Check the phrase">
     </form>
 
-    <p id="result">Attempts display here </p>
+    <p id="result">This text will be replaced </p>
+
+    <script>
+        var correct = 0;
+        var wrong = 0;
+        
+        function processPhrase() {
+            //console.log("Getting values of check &secret phrase")
+            cct = document.getElementById("secretphrase").value
+            rct = document.getElementById("checkphrase").value
+            out = document.getElementById("result")
+            if (cct == rct) {
+                correct = correct + 1
+                alert("Access Allowed")
+            }
+            else {
+                wrong = wrong + 1
+                alert("Access Denied")
+            }
+            out.innerHTML = "Correct count : " + correct + " Wrong count : " + wrong
+        }
+        let usingImage = 1
+        function newImage(img) {
+            switch (usingImage) {
+                case 1:
+                    document.getElementById("animals").src = "tiger.jpg"
+                    usingImage++;
+                    break;
+                case 2:
+                    document.getElementById("animals").src = "horse.jpg"
+                    usingImage++;
+                    break;
+                default:
+                    usingImage = 1;
+                    document.getElementById("animals").src = "cow.jpg"
+                    break;
+            }
+        }
+
+    </script>
+    <div class="container">
+
+        <img src="tiger.jpg" id="animals" alt="dog" style="height: 200px;" width="200px;" onclick="newImage(this)" />
+
+    </div>
 
 </body>
 
