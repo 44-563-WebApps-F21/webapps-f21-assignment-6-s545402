@@ -3,8 +3,17 @@
 
 <head>
     <title>Pass Pharses</title>
-</head>
+    <style>
+        form {
+            background-color: lightskyblue;
+            border: solid black;
+        }
 
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
 <body>
 
     <h2>Pass pharse by Tirumala Swathi</h2>
@@ -36,6 +45,9 @@
             else {
                 wrong = wrong + 1
                 alert("Access Denied")
+                if(wrong > 3){
+                    alert("account locked");
+                }
             }
             out.innerHTML = "Correct count : " + correct + " Wrong count : " + wrong
         }
